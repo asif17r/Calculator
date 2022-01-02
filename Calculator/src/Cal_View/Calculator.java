@@ -37,12 +37,14 @@ public class Calculator extends JFrame{
     double lastnumber(String one){
         StringBuilder ans = new StringBuilder();
         int idx = one.length()-1;
-        while(idx >= 0 && (Character.isDigit(one.charAt(idx)) || one.charAt(idx) == '.'))
+        while(idx >= 0 && (Character.isDigit(one.charAt(idx)) || one.charAt(idx) == '.' || one.charAt(idx) == '-'))
         {
             ans.append(one.charAt(idx));
+            if(one.charAt(idx) == '-') break;
             idx--;
         }
         ans.reverse();
+        System.out.println(ans);
         double ax = 0;
         try{
             ax = Double.parseDouble(ans.toString());
@@ -164,7 +166,7 @@ public class Calculator extends JFrame{
                         solve += lastnum;
                     }
                     if(lastoperator == "-"){
-                        solve -= lastnum;
+                        solve += lastnum;
                     }
                     if(lastoperator == "*"){
                         solve *= lastnum;
@@ -187,7 +189,7 @@ public class Calculator extends JFrame{
                     solve += lastnum;
                 }
                 if(lastoperator == "-"){
-                    solve -= lastnum;
+                    solve += lastnum;
                 }
                 if(lastoperator == "*"){
                     solve *= lastnum;
@@ -209,7 +211,7 @@ public class Calculator extends JFrame{
                     solve += lastnum;
                 }
                 if(lastoperator == "-"){
-                    solve -= lastnum;
+                    solve += lastnum;
                 }
                 if(lastoperator == "*"){
                     solve *= lastnum;
@@ -231,7 +233,7 @@ public class Calculator extends JFrame{
                     solve += lastnum;
                 }
                 if(lastoperator == "-"){
-                    solve -= lastnum;
+                    solve += lastnum;
                 }
                 if(lastoperator == "*"){
                     solve *= lastnum;
@@ -274,7 +276,7 @@ public class Calculator extends JFrame{
                     solve += lastnum;
                 }
                 if(lastoperator == "-"){
-                    solve -= lastnum;
+                    solve += lastnum;
                 }
                 if(lastoperator == "*"){
                     solve *= lastnum;
